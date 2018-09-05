@@ -10,8 +10,7 @@ GAME DYNAMICS
 // Game Variables
 let min = 1,
     max = 10,
-    // winningNum = getRandomNum(min, max),
-    winningNum = 2,
+    winningNum = getRandomNum(min, max),
     guessesLeft = 3;
 
 // UI Elements
