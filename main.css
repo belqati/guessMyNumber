@@ -18,6 +18,10 @@ button {
   color: white;
 }
 
+input {
+  width: 35%;
+}
+
 .container {
   max-width: 900px;
   width: 90%;
