@@ -13,9 +13,18 @@ h5 {
   font-weight: bold;
 }
 
+h6 {
+  font-weight: bold;
+}
+
 button {
   border-color: white;
   color: white;
+}
+
+button:hover, button:focus {
+  border-color: #6EAD87;
+  color: #6EAD87;
 }
 
 input {
@@ -30,4 +39,8 @@ input {
   border-radius: 5px;
   margin-top: 5rem;
   text-align: center;
+}
+
+.message {
+  text-shadow: 0 0 3px white;
 }

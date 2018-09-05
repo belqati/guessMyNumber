@@ -10,7 +10,8 @@ GAME DYNAMICS
 // Game Variables
 let min = 1,
     max = 10,
-    winningNum = getRandomNum(min, max),
+    // winningNum = getRandomNum(min, max),
+    winningNum = 2,
     guessesLeft = 3;
 
 // UI Elements
@@ -39,7 +40,7 @@ UIguessBtn.addEventListener('click', function(){
 
   // Validate guess
   if(isNaN(guess) || guess < min || guess > max){
-    setMessage(`Please enter a number between ${min} and ${max}.`, 'red')
+    setMessage(`Please enter a number between ${min} and ${max}.`, '#f7797d')
 
   // Check if winning number
   } else if(guess === winningNum){
@@ -55,11 +56,11 @@ UIguessBtn.addEventListener('click', function(){
     } else {
       // GAME CONTINUE
       // change border
-      UIguessInput.style.border = 'solid 2px yellow';
+      UIguessInput.style.border = 'solid 2px #f7797d';
       // clear input
       UIguessInput.value = '';
       // set message
-      setMessage(`The number ${guess} is incorrect: ${guessesLeft} guesses left.`, 'yellow');
+      setMessage(`The number ${guess} is incorrect: ${guessesLeft} guesses left.`, '#f7797d');
     }
   }
 });
@@ -67,7 +68,7 @@ UIguessBtn.addEventListener('click', function(){
 // GAME OVER
 function gameOver(won, msg){
   let color;
-  won === true ? color = 'green' : color = 'red';
+  won === true ? color = '#6EAD87' : color = '#f7797d';
 
   // disable input
   UIguessInput.disabled = true;
