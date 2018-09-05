@@ -1,6 +1,6 @@
-# guessMyNumber
+# <img src="img/questionmark_icon.ico" width="30px"> guessMyNumber
 
-<img src="img/questionmark_icon.ico" width="20px"> *guessMyNumber* is a game app created under the direction of [Brad Traversy](https://www.udemy.com/modern-javascript-from-the-beginning/) in his *Modern JavaScript from the Beginning* course. The app uses the following technologies:
+*guessMyNumber* is a game app created under the direction of [Brad Traversy](https://www.udemy.com/modern-javascript-from-the-beginning/) in his *Modern JavaScript from the Beginning* course. The app uses the following technologies:
 
   * JavaScript
   * HTML
