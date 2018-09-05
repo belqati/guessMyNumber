@@ -41,6 +41,9 @@ UIguessBtn.addEventListener('click', function(){
   // Validate guess
   if(isNaN(guess) || guess < min || guess > max){
     setMessage(`Please enter a number between ${min} and ${max}.`, '#f7797d')
+    // clear input
+    UIguessInput.value = '';
+    UIguessInput.focus();
 
   // Check if winning number
   } else if(guess === winningNum){
@@ -49,6 +52,7 @@ UIguessBtn.addEventListener('click', function(){
   } else {
     // wrong number
     guessesLeft -= 1;
+    UIguessInput.focus();
 
     if(guessesLeft === 0){
       // GAME OVER
@@ -80,6 +84,7 @@ function gameOver(won, msg){
   setMessage(msg);
 
   // play again?
+  UIguessBtn.focus();
   UIguessBtn.innerHTML = 'Play Again <i class="fas fa-question fa-spin"></i>';
   UIguessBtn.className += 'play-again';
 }
