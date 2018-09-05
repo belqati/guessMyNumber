@@ -1,0 +1,17 @@
+body {
+background: #f7797d;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #f7797d, #FBD786, #C6FFDD) fixed;  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #f7797d, #FBD786, #C6FFDD) fixed; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+color: white;
+}
+
+.container {
+  max-width: 900px;
+  width: 90%;
+  padding: 40px;
+  position: relative;
+  box-sizing: border-box;
+  box-shadow: 1px 1px 7px;
+  margin-top: 7rem;
+  text-align: center;
+}

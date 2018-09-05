@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css">
+  <link rel="stylesheet" href="main.css">
+  <title>guessMyNumber</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1><i class="fas fa-question fa-rotate-90"></i> Guess My Number!</h1>
+    <div id="game">
+      <p>Guess a number between <span class="min-num">1</span> and <span class="max-num">10</span></p>
+      <input type="number" id="guess-input" placeholder="Take a wild guess…">
+      <button type="submit" id="guess-value"><i class="fas fa-question fa-spin"></i></button>
+      <p class="message"></p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
