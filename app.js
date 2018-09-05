@@ -32,18 +32,44 @@ UIguessBtn.addEventListener('click', function(){
   // Validate guess
   if(isNaN(guess) || guess < min || guess > max){
     setMessage(`Please enter a number between ${min} and ${max}.`, 'red')
-  }
-
+    
   // Check if winning number
-  if(guess === winningNum){
-    // disable input
-    UIguessInput.disabled = true;
-    // change border
-    UIguessInput.style.border = 'solid 2px green';
-    // set message
-    setMessage(`The number ${winningNum} is spot-on!`, 'green');
+  } else if(guess === winningNum){
+    // GAME OVER
+    gameOver(true, `The number ${winningNum} is spot-on!`)
+  } else {
+    // wrong number
+    guessesLeft -= 1;
+
+    if(guessesLeft === 0){
+      // GAME OVER
+      gameOver(false, `Sorry! The correct number is ${winningNum}.`)
+    } else {
+      // GAME CONTINUE
+      // change border
+      UIguessInput.style.border = 'solid 2px yellow';
+      // clear input
+      UIguessInput.value = '';
+      // set message
+      setMessage(`The number ${guess} is incorrect: ${guessesLeft} guesses left.`, 'yellow');
+    }
   }
 });
+
+// GAME OVER
+function gameOver(won, msg){
+  let color;
+  won === true ? color = 'green' : color = 'red';
+
+  // disable input
+  UIguessInput.disabled = true;
+  // change styles
+  UIguessInput.style.border = 'solid 2px';
+  UIguessInput.style.borderColor = color;
+  UImessage.style.color = color;
+  // set message
+  setMessage(msg);
+}
 
 // error message
 function setMessage(msg, color){
