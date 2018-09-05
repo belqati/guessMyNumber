@@ -5,13 +5,25 @@ background: linear-gradient(to bottom, #f7797d, #FBD786, #C6FFDD) fixed; /* W3C,
 color: white;
 }
 
+h1 {
+  font-weight: bolder;
+}
+
+h5 {
+  font-weight: bold;
+}
+
+button {
+  border-color: white;
+  color: white;
+}
+
 .container {
   max-width: 900px;
   width: 90%;
   padding: 40px;
-  position: relative;
-  box-sizing: border-box;
   box-shadow: 1px 1px 7px;
-  margin-top: 7rem;
+  border-radius: 5px;
+  margin-top: 5rem;
   text-align: center;
 }
