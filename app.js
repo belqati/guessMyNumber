@@ -10,11 +10,11 @@ GAME DYNAMICS
 // Game Variables
 let min = 1,
     max = 10,
-    winningNum = 2,
+    winningNum = getRandomNum(min, max),
     guessesLeft = 3;
 
 // UI Elements
-const UIgame = document.querySelector('#game'),
+const UIgameWrapper = document.querySelector('#game'),
       UIminNum = document.querySelector('.min-num'),
       UImaxNum = document.querySelector('.max-num'),
       UIguessBtn = document.querySelector('#guess-btn'),
@@ -25,6 +25,14 @@ const UIgame = document.querySelector('#game'),
 UIminNum.textContent = min;
 UImaxNum.textContent = max;
 
+// Play again event listener
+UIgameWrapper.addEventListener('mousedown', function(e){
+  if(e.target.className === 'play-again'){
+    // reload current document
+    window.location.reload();
+  }
+});
+
 // Listen for guess
 UIguessBtn.addEventListener('click', function(){
   let guess = parseInt(UIguessInput.value);
@@ -32,7 +40,7 @@ UIguessBtn.addEventListener('click', function(){
   // Validate guess
   if(isNaN(guess) || guess < min || guess > max){
     setMessage(`Please enter a number between ${min} and ${max}.`, 'red')
-    
+
   // Check if winning number
   } else if(guess === winningNum){
     // GAME OVER
@@ -69,9 +77,18 @@ function gameOver(won, msg){
   UImessage.style.color = color;
   // set message
   setMessage(msg);
+
+  // play again?
+  UIguessBtn.innerHTML = 'Play Again <i class="fas fa-question fa-spin"></i>';
+  UIguessBtn.className += 'play-again';
 }
 
-// error message
+// Get winning number
+function getRandomNum(min, max){
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+// Set message
 function setMessage(msg, color){
   UImessage.style.color = color;
   UImessage.textContent = msg;
